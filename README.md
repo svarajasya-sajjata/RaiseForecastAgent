@@ -1,30 +1,68 @@
 # Raise Forecast Agent
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Raise Forecast Agent is a web application that predicts the success probability of startup fundraising rounds. It provides a modern, interactive UI for users to input startup details and receive a forecast with detailed metrics and visualizations.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/himanshu-rawats-projects-49b8edc3/v0-raise-forecast-agent)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/8BrqN0rz0Fi)
+## Features
+- **Startup Fundraising Forecast**: Input startup data and get a probability score for fundraising success.
+- **Detailed Metrics**: View narrative strength, founder trust, traction score, and more.
+- **Animated Results**: Engaging, animated progress bars and cards for each metric.
+- **PDF Export & Sharing**: Download results as PDF or share them easily.
+- **Modern UI**: Built with Next.js, Tailwind CSS, and Radix UI components for a beautiful, responsive experience.
 
-## Overview
+## Tech Stack
+- **Framework**: Next.js (App Router, React Server Components)
+- **Styling**: Tailwind CSS, class-variance-authority, tailwind-merge
+- **UI Components**: Radix UI, custom components in `/components/ui/`
+- **Form Handling**: React Hook Form, Zod validation
+- **API**: Custom endpoints in `/app/api/`
+- **PDF Generation**: (If implemented) Uses browser APIs or libraries for PDF export
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## Project Structure
+```
+app/
+  layout.tsx         # Root layout
+  page.jsx           # Landing page
+  api/get-forecast/  # API route for forecasts
+  forecast/page.jsx  # Forecast results page
+components/
+  forecast-results.jsx  # Results display component
+  theme-provider.tsx    # Theme context
+  ui/                   # Radix-based UI components
+hooks/                  # Custom React hooks
+lib/                    # Utility functions
+public/                 # Static assets
+styles/                 # Global styles
+```
 
-## Deployment
+## Getting Started
+1. **Install dependencies**
+   ```sh
+   pnpm install
+   # or
+   npm install
+   # or
+   yarn install
+   ```
+2. **Run the development server**
+   ```sh
+   pnpm dev
+   # or
+   npm run dev
+   # or
+   yarn dev
+   ```
+3. **Open [http://localhost:3000](http://localhost:3000) in your browser.**
 
-Your project is live at:
+## Scripts
+- `dev` – Start the development server
+- `build` – Build for production
+- `start` – Start the production server
+- `lint` – Run ESLint
 
-**[https://vercel.com/himanshu-rawats-projects-49b8edc3/v0-raise-forecast-agent](https://vercel.com/himanshu-rawats-projects-49b8edc3/v0-raise-forecast-agent)**
+## Customization
+- **UI Components**: Modify or extend components in `components/ui/` for custom UI needs.
+- **Forecast Logic**: Update API logic in `app/api/get-forecast/route.js`.
+- **Styling**: Edit `tailwind.config.ts` and `globals.css` for theme changes.
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/8BrqN0rz0Fi](https://v0.dev/chat/projects/8BrqN0rz0Fi)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## License
+This project is for demonstration and hackathon purposes.
